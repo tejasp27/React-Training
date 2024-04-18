@@ -1,0 +1,23 @@
+{
+    "name": "react-training",
+    "version": "1.0.0",
+    "description": "React JS training",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "start": "npx parcel index.html"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "parcel": "^2.12.0",
+        "process": "^0.11.10"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "browserslist": [
+        "last 2 versions"
+    ]
+}
