@@ -4,6 +4,7 @@ import Product from "./Product";
 import { Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 const ProductList = () => {
 
     //use state hook
@@ -81,7 +82,9 @@ const ProductList = () => {
                         </Button>
                         <div className="d-flex flex-wrap gap-3" >
                             {products.map((product,index)=>(
-                              <Product key={index} product={product}/>  
+                                <Link key={index} to={"/product/" + product.id}><Product  product={product}/>  </Link> 
+                                // Routing to details Page with dynamic product ID
+                              
                             ))
                             }
 

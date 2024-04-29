@@ -5,15 +5,30 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const handleLogin = () => {
+        setIsLoggedIn(!isLoggedIn);
+    }
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
           <Navbar.Brand
-            href="#"
-            style={{ backgroundColor: "#7EA2FC", color: "white" }}
+            href="/"
+            style={{
+                backgroundColor: "#FF9900", 
+                color: "black", 
+                fontFamily: "Arial, sans-serif", 
+                fontWeight: "bold", 
+                fontSize: "1.2rem", 
+                display: "flex",
+              }}
           >
             Amazon.com
           </Navbar.Brand>
@@ -24,8 +39,11 @@ export default function NavBar() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
+
+                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/about">About</Link>
+                <Link className="nav-link" to="/contact">Contact</Link>
+              <Nav.Link href="#link" onClick={ handleLogin } > { isLoggedIn ? "Logout" : "Login" } </Nav.Link>         
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
