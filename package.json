@@ -10,6 +10,7 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@testing-library/react": "^15.0.6",
         "parcel": "^2.12.0",
         "process": "^0.11.10"
     },
@@ -18,7 +19,8 @@
         "react": "^18.2.0",
         "react-bootstrap": "^2.10.2",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.23.0"
+        "react-router-dom": "^6.23.0",
+        "react-with-important-style": "^0.2.2"
     },
     "browserslist": [
         "last 2 versions"

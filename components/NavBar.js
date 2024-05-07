@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Electronics from "./Electronics";
 
 export default function NavBar() {
 
@@ -43,6 +44,7 @@ export default function NavBar() {
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
+                <Link className="nav-link" to="/electronics">Electronics</Link>
               <Nav.Link href="#link" onClick={ handleLogin } > { isLoggedIn ? "Logout" : "Login" } </Nav.Link>         
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>

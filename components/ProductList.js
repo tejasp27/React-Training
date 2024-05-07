@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 const ProductList = () => {
 
+    
     //use state hook
     const [products, setProducts] = useState([]);
     const [searchText, setSearchText] = useState("");
@@ -23,6 +24,7 @@ const ProductList = () => {
         setProducts(jsonProducts.products);
         //console.log(jsonProducts.products);
     }
+    
 
     // filter products using filter
     const handleFilter = () => {
@@ -35,6 +37,7 @@ const ProductList = () => {
 
         //filtering products using search
     const handleSearch = () => {
+
         const matchedproduct = products.filter((product) => {
             return product.title.toLowerCase().includes(searchText.toLowerCase())
         });
@@ -44,6 +47,7 @@ const ProductList = () => {
     //on key down event
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
+            console.log(event.key);
             handleSearch();
         }
     };

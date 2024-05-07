@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,11 +11,14 @@ import Error from "./components/Error";
 import ProductDetail from "./components/ProductDetail";
 
 
+const Electronics = lazy(()=> import("./components/Electronics"));      //Lazy component for code splitting
 
-const fetchProducts = fetch("https://dummyjson.com/products")
+
+
+/*const fetchProducts = fetch("https://dummyjson.com/products")
     .then(response => response.json())
     .then(data=> console.log(data))
-    .then(error => console.log(error));
+    .then(error => console.log(error));*/
 
 
 
@@ -47,6 +50,15 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",   //routing using dom
                 element: <Contact/>
+            },
+            {
+                path: "/electronics",   //wrapping Lazy component around suspense
+                element: (
+                    <Suspense>
+                        <Electronics/>      
+                    </Suspense>
+                )
+                
             },
             {
                 path: "/product/:id",   //routing using params
